@@ -25,12 +25,13 @@ const upload = multer({
 
 
 // Route to create personal information
-router.post("/register", upload.single('Img'), (req, res, next) => {
-    console.log("Body:", req.body);
-    console.log("File:", req.file);
-    next();
-}, userValidationRules(), validate, Register);
+// router.post("/register", upload.single('Img'), (req, res, next) => {
+//     console.log("Body:", req.body);
+//     console.log("File:", req.file);
+//     next();
+// }, userValidationRules(), validate, Register);
 
+router.post('/register', upload.single('Img'), Register);
 router.post('/login', loginValidationRules(), Login);
 
 
